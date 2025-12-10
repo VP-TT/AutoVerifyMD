@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { LayoutDashboard, FileCheck, AlertOctagon, FileText, LogOut } from 'lucide-react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
@@ -62,4 +61,3 @@ const Sidebar = () => {
 };
 
 export default Sidebar;
-
