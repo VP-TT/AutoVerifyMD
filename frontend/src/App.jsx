@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import AllValidationRuns from './pages/AllValidationRuns';
+import FlaggedRecordsPage from './pages/FlaggedRecordsPage';
+import ReportsPage from './pages/ReportsPage';
 import './App.css';
 
 // Mock Protected Route
@@ -30,6 +32,22 @@ function App() {
           element={
             <ProtectedRoute>
               <AllValidationRuns />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/flagged"
+          element={
+            <ProtectedRoute>
+              <FlaggedRecordsPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/reports"
+          element={
+            <ProtectedRoute>
+              <ReportsPage />
             </ProtectedRoute>
           }
         />

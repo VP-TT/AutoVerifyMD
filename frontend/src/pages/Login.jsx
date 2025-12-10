@@ -11,6 +11,11 @@ const Login = () => {
     // Mock authentication
     if (email && password) {
       localStorage.setItem('isAuthenticated', 'true');
+      // Extract username from email
+      const usernameParts = email.split('@')[0];
+      // Capitalize first letter
+      const username = usernameParts.charAt(0).toUpperCase() + usernameParts.slice(1);
+      localStorage.setItem('username', username);
       navigate('/dashboard');
     } else {
       alert('Please enter credentials (any non-empty strings)');

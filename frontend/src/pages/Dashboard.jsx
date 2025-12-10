@@ -6,10 +6,12 @@ import DashboardStats from '../components/DashboardStats';
 import Charts from '../components/Charts';
 import ValidationRuns from '../components/ValidationRuns';
 import { Bell, User } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Dashboard = () => {
   const [providers, setProviders] = useState([]);
   const [loading, setLoading] = useState(false);
+  const username = localStorage.getItem('username') || 'Administrator';
 
   const fetchProviders = async () => {
     setLoading(true);
@@ -50,7 +52,7 @@ const Dashboard = () => {
 
       <main className="flex-1 overflow-y-auto">
         <header className="bg-white p-4 shadow-sm flex justify-between items-center mb-6">
-          <div className="text-xl font-semibold text-gray-800">Hello, Administrator</div>
+          <div className="text-xl font-semibold text-gray-800">Hello, {username}</div>
           <div className="flex items-center gap-4">
             <button className="p-2 text-gray-400 hover:bg-gray-100 rounded-full">
               <Bell size={20} />
@@ -80,7 +82,7 @@ const Dashboard = () => {
               <div className="bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden h-full">
                 <div className="p-6 border-b border-gray-100 flex justify-between items-center">
                   <h3 className="font-semibold text-lg text-gray-800">Flagged Records</h3>
-                  <button className="text-blue-500 text-sm font-medium hover:text-blue-600">Action</button>
+                  <Link to="/flagged" className="text-blue-500 text-sm font-medium hover:text-blue-600">Action</Link>
                 </div>
                 {loading ? (
                   <p className="p-6">Loading...</p>
