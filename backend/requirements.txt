@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+sqlalchemy
+pydantic
+celery
+redis
+beautifulsoup4
+selenium
+requests
+transformers
+torch
